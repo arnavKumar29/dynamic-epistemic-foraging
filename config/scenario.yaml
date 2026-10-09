@@ -1,0 +1,65 @@
+environment:
+  width: 800
+  height: 600
+  obstacles:
+    - [280, 140, 110, 280]
+    - [530,  90,  90, 340]
+  # 8 resources scattered across the arena for real competition
+  resources:
+    - [120, 100, 18]
+    - [680, 480, 18]
+    - [400, 500, 18]
+    - [700, 130, 18]
+    - [140, 490, 18]
+    - [400, 300, 18]
+    - [620, 310, 18]
+    - [180, 300, 18]
+  # Named goal positions for Bayesian ToM intent inference
+  goals:
+    forage:  [680, 480]
+    return:  [50,  50]
+    explore: [400, 300]
+
+fleet:
+  agent_count: 4
+  start_positions:
+    0: [60.0,   60.0,  0.0]
+    1: [60.0,  540.0,  0.0]
+    2: [740.0,  60.0,  3.14159]
+    3: [740.0, 540.0,  3.14159]
+  kinematic_limits:
+    max_velocity: 3.0
+    max_angular_velocity: 0.18
+    position_tolerance: 20.0   # slightly larger to absorb sensor noise
+
+security_profile:
+  use_ecdh: true
+  aes_key_hex: "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+  use_sdes_demo: false
+  sdes_key: 882
+
+simulation:
+  ticks: 2000
+  ticks_per_second: 20
+  broadcast_every_n_ticks: 1
+  replan_every_n_ticks: 5        # D* Lite only replans every 5 ticks for speed
+  # Set a fixed integer to reproduce a run exactly; null = random each run
+  random_seed: null
+
+foraging:
+  levy_alpha: 1.5                # Lévy exponent — 1.5 = optimal search theory
+  sensor_noise_std: 1.8          # Gaussian noise on broadcast position (px)
+  resource_detect_radius: 55.0   # How close before agent notices a resource
+  collect_ticks: 30              # Ticks to collect one resource
+  deposit_ticks: 15              # Ticks to deposit at base
+  resource_respawn_ticks: 250    # Ticks until a depleted resource reappears
+
+trust:
+  alpha0: 4.0
+  beta0: 1.0
+  aging: 0.97                    # Slower decay than before
+  reroute_threshold: 0.40
+  dstar_sensitivity: 7.0
+  meta_controller:
+    enabled: true
+    model_path: "models/ppo_trust_controller.zip"

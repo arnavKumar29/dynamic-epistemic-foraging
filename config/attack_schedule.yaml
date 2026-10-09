@@ -1,0 +1,43 @@
+attacks:
+  # ── Wave 1: Position-forge on A0 (from A2) ──────────────────────────── #
+  # Spatial offset large enough that SMT catches it within 1-2 ticks.
+  - start_tick: 60
+    duration: 140
+    attacker_id: 2
+    target_id: 0
+    mode: "position_forge"
+    offset: [170.0, -190.0]
+
+  # ── Wave 2: Replay attack on A3 (from A1) ─────────────────────────── #
+  # Replay guard (monotonic tick) blocks this at the crypto layer.
+  - start_tick: 300
+    duration: 120
+    attacker_id: 1
+    target_id: 3
+    mode: "replay"
+    delay_ticks: 15
+
+  # ── Wave 3: Drop / silent DoS on A2 (from A3) ─────────────────────── #
+  # Hard to distinguish from packet loss — DBN variance signal tells them apart.
+  - start_tick: 550
+    duration: 100
+    attacker_id: 3
+    target_id: 2
+    mode: "drop"
+
+  # ── Wave 4: Second forge wave on A1 (from A0 perspective A2 forges) ── #
+  # Different attacker, smaller offset — tests if low trust lingers.
+  - start_tick: 800
+    duration: 200
+    attacker_id: 3
+    target_id: 1
+    mode: "position_forge"
+    offset: [-145.0, 160.0]
+
+  # ── Wave 5: Late replay burst — tests trust recovery cap ──────────── #
+  - start_tick: 1300
+    duration: 80
+    attacker_id: 2
+    target_id: 0
+    mode: "replay"
+    delay_ticks: 10

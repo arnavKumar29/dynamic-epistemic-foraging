@@ -1,0 +1,158 @@
+{
+  "PPO Adaptive (Ours)": {
+    "mean_reward": 152.257,
+    "std_reward": 124.5,
+    "attack_isolation_pct": 78.74,
+    "false_alarm_pct": 25.14,
+    "fault_isolation_pct": 0.0,
+    "per_scenario": {
+      "CLEAN": {
+        "mean_reward": 0.0,
+        "isolation_pct": 100.0,
+        "false_alarm_pct": 0.0
+      },
+      "BURST_ATTACK": {
+        "mean_reward": 26.75,
+        "isolation_pct": 92.11,
+        "false_alarm_pct": 73.17
+      },
+      "STEALTH_CREEPING_DRIFT": {
+        "mean_reward": 297.36,
+        "isolation_pct": 90.73,
+        "false_alarm_pct": 0.0
+      },
+      "INTERMITTENT_ON_OFF": {
+        "mean_reward": -34.03,
+        "isolation_pct": 0.0,
+        "false_alarm_pct": 0.0
+      },
+      "HARDWARE_SENSOR_FAULT": {
+        "mean_reward": 0.0,
+        "isolation_pct": 100.0,
+        "false_alarm_pct": 0.0
+      },
+      "MULTI_PHASE_MIXED": {
+        "mean_reward": 163.05,
+        "isolation_pct": 82.0,
+        "false_alarm_pct": 18.0
+      }
+    }
+  },
+  "Fixed \u03c4=0.40 (Standard)": {
+    "mean_reward": 63.231,
+    "std_reward": 149.125,
+    "attack_isolation_pct": 73.95,
+    "false_alarm_pct": 51.73,
+    "fault_isolation_pct": 0.0,
+    "per_scenario": {
+      "CLEAN": {
+        "mean_reward": 0.0,
+        "isolation_pct": 100.0,
+        "false_alarm_pct": 0.0
+      },
+      "BURST_ATTACK": {
+        "mean_reward": -24.18,
+        "isolation_pct": 86.84,
+        "false_alarm_pct": 81.71
+      },
+      "STEALTH_CREEPING_DRIFT": {
+        "mean_reward": 273.23,
+        "isolation_pct": 87.81,
+        "false_alarm_pct": 0.0
+      },
+      "INTERMITTENT_ON_OFF": {
+        "mean_reward": -29.49,
+        "isolation_pct": 0.0,
+        "false_alarm_pct": 0.0
+      },
+      "HARDWARE_SENSOR_FAULT": {
+        "mean_reward": 0.0,
+        "isolation_pct": 100.0,
+        "false_alarm_pct": 0.0
+      },
+      "MULTI_PHASE_MIXED": {
+        "mean_reward": -56.7,
+        "isolation_pct": 66.0,
+        "false_alarm_pct": 74.67
+      }
+    }
+  },
+  "Fixed \u03c4=0.60 (Conservative)": {
+    "mean_reward": 81.454,
+    "std_reward": 152.005,
+    "attack_isolation_pct": 78.74,
+    "false_alarm_pct": 51.73,
+    "fault_isolation_pct": 0.0,
+    "per_scenario": {
+      "CLEAN": {
+        "mean_reward": 0.0,
+        "isolation_pct": 100.0,
+        "false_alarm_pct": 0.0
+      },
+      "BURST_ATTACK": {
+        "mean_reward": -9.4,
+        "isolation_pct": 92.11,
+        "false_alarm_pct": 81.71
+      },
+      "STEALTH_CREEPING_DRIFT": {
+        "mean_reward": 295.79,
+        "isolation_pct": 90.73,
+        "false_alarm_pct": 0.0
+      },
+      "INTERMITTENT_ON_OFF": {
+        "mean_reward": -43.01,
+        "isolation_pct": 0.0,
+        "false_alarm_pct": 0.0
+      },
+      "HARDWARE_SENSOR_FAULT": {
+        "mean_reward": 0.0,
+        "isolation_pct": 100.0,
+        "false_alarm_pct": 0.0
+      },
+      "MULTI_PHASE_MIXED": {
+        "mean_reward": -25.23,
+        "isolation_pct": 82.0,
+        "false_alarm_pct": 74.67
+      }
+    }
+  },
+  "Fixed \u03c4=0.20 (Permissive)": {
+    "mean_reward": 59.991,
+    "std_reward": 117.388,
+    "attack_isolation_pct": 57.49,
+    "false_alarm_pct": 17.63,
+    "fault_isolation_pct": 0.0,
+    "per_scenario": {
+      "CLEAN": {
+        "mean_reward": 0.0,
+        "isolation_pct": 100.0,
+        "false_alarm_pct": 0.0
+      },
+      "BURST_ATTACK": {
+        "mean_reward": -63.4,
+        "isolation_pct": 68.42,
+        "false_alarm_pct": 70.73
+      },
+      "STEALTH_CREEPING_DRIFT": {
+        "mean_reward": 222.15,
+        "isolation_pct": 79.98,
+        "false_alarm_pct": 0.0
+      },
+      "INTERMITTENT_ON_OFF": {
+        "mean_reward": -30.21,
+        "isolation_pct": 0.0,
+        "false_alarm_pct": 0.0
+      },
+      "HARDWARE_SENSOR_FAULT": {
+        "mean_reward": 0.0,
+        "isolation_pct": 100.0,
+        "false_alarm_pct": 0.0
+      },
+      "MULTI_PHASE_MIXED": {
+        "mean_reward": 4.63,
+        "isolation_pct": 2.0,
+        "false_alarm_pct": 2.0
+      }
+    }
+  }
+}
